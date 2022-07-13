@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/1c118868a9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <i class="fa-solid fa-book" id="book-logo"></i>
+            <h1 id="page-title">Book Maker 3000</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/books">Books</a></li>
+                <li><a href="/books/new">New Book</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock content %}
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="book-wrapper">
+    {% for book in books %}
+    <ul>
+        <div class="book">
+            <li>{{ book.title }}</li>
+            <li>{{ book.pages }}</li>
+            <li>{{ book.author.first_name }}</li>
+        </div>
+    </ul>
+    {% endfor %}
+</div>
+
+
+
+{% endblock content %}
