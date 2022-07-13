@@ -7,16 +7,18 @@
     <ul>
         <div class="book">
             <li>
-                <h2>{{ book.title }}</h2>
+                <h2>Title: {{ book.title }}</h2>
             </li>
             <li>
-                <h3>{{ book.pages }}</h3>
+                <h3>Pages: {{ book.pages }}</h3>
             </li>
             <li>
-                <h5>{{ book.author.first_name }}</h5>
+                <h5>Author: {{ book.author.first_name }} {{ book.author.last_name }}</h5>
             </li>
             <li>
-                <h5>{{ book.author.last_name }}</h5>
+                <form action="/books/edit/{{ book.id }}" , method="GET">
+                    <button>Edit</button>
+                </form>
             </li>
         </div>
     </ul>

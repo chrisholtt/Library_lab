@@ -12,17 +12,17 @@ body {
 }
 
 #page-title {
-    color: white;
+    color: var(--blue);
     font-size: 2rem;
 }
 
 
 nav {
     display: flex;
-    background-color: var(--blue);
+    /* background-color: var(--blue); */
     align-items: center;
     justify-content: space-between;
-    padding: 2px;
+    margin: 0px 20px;
 }
 
 nav ul{
@@ -30,23 +30,23 @@ nav ul{
 }
 
 nav ul li {
-    padding: 5px;
     list-style-type: none;
 }
 
 
 nav ul li a{
     text-decoration: none;
-    color: white;
+    color: var(--blue);
     font-size: 1.5rem;
+    padding: 5px;
 }
 
 
 
 .book {
     background: var(--green);
+    box-shadow: 5px 5px 8px var(--blue);
     border-radius: 5px;
-    border: 2px solid var(--blue);
     width: 400px;
     height: auto;
     color: white;
@@ -57,8 +57,14 @@ nav ul li a{
     list-style-type: none;
 }
 
+.book-logo-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #book-logo{
-    color: white;
+    color: var(--blue);
     font-size: 2rem;
 }
 

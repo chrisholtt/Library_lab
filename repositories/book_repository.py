@@ -1,3 +1,4 @@
+from optparse import Values
 from db.run_sql import run_sql
 
 from models.author import Author
@@ -18,7 +19,7 @@ def save(book):
     book.id = id
     
     return book
-    
+
 
 def delete_all():
     sql = "DELETE FROM books"
@@ -33,7 +34,8 @@ def select(id):
 
     if results:
         results = results[0]
-        author = author_repository.select(results['user_id'])
+        author = author_repository.select(results['author_id'])
+        # author = author_repository.select(results['user_id'])
         book = Book(author, results['title'], results['pages'], results['id'] )
     return book
 
@@ -52,5 +54,15 @@ def select_all():
         books.append(book)
 
     return books
+
+
+# Get this to work
+def update(book):
+    sql = """
+    UPDATE books SET (title, pages) = (%s, %s)
+    WHERE id = %s
+    """
+    values = [book.title, book.pages, book.id]
+    run_sql(sql, values)
 
 
