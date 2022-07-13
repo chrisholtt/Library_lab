@@ -6,9 +6,18 @@
     {% for book in books %}
     <ul>
         <div class="book">
-            <li>{{ book.title }}</li>
-            <li>{{ book.pages }}</li>
-            <li>{{ book.author.first_name }}</li>
+            <li>
+                <h2>{{ book.title }}</h2>
+            </li>
+            <li>
+                <h3>{{ book.pages }}</h3>
+            </li>
+            <li>
+                <h5>{{ book.author.first_name }}</h5>
+            </li>
+            <li>
+                <h5>{{ book.author.last_name }}</h5>
+            </li>
         </div>
     </ul>
     {% endfor %}

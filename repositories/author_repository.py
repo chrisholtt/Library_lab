@@ -40,8 +40,9 @@ def select(id):
     author = None
     sql = "SELECT * FROM authors WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
+    result = run_sql(sql, values)
 
     if result is not None:
+        result = result[0]
         author = Author(result['first_name'], result['last_name'], result['id'] )
     return author

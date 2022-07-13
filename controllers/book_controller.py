@@ -8,10 +8,8 @@ books_blueprint = Blueprint("books", __name__)
 @books_blueprint.route("/books")
 def books():
     books = book_repository.select_all()
-    # authors = author_repository.select_all()
     return render_template("books/index.html", books=books)
-    # had below being passed down
-    # authors=authors
+
 
 
 # new book page

@@ -41,11 +41,13 @@ def select(id):
 def select_all():
     books = []
 
-    sql = "SELECT * FROM books ORDER BY id"
+    sql =  """
+    SELECT * FROM books
+    """
     results = run_sql(sql)
 
     for row in results:
-        author = author_repository.select(row['id'])
+        author = author_repository.select(row['author_id'])
         book = Book(author, row['title'], row['pages'], row['id'] )
         books.append(book)
 
