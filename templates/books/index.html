@@ -4,24 +4,26 @@
 
 <div class="book-wrapper">
     {% for book in books %}
-    <ul>
-        <div class="book">
-            <li>
-                <h2>Title: {{ book.title }}</h2>
-            </li>
-            <li>
-                <h3>Pages: {{ book.pages }}</h3>
-            </li>
-            <li>
-                <h5>Author: {{ book.author.first_name }} {{ book.author.last_name }}</h5>
-            </li>
-            <li>
-                <form action="/books/edit/{{ book.id }}" , method="GET">
-                    <button>Edit</button>
-                </form>
-            </li>
-        </div>
-    </ul>
+    <a href="/book/{{ book.id }}">
+        <ul>
+            <div class="book">
+                <li>
+                    <h2>Title: {{ book.title }}</h2>
+                </li>
+                <li>
+                    <h3>Pages: {{ book.pages }}</h3>
+                </li>
+                <li>
+                    <h5>Author: {{ book.author.first_name }} {{ book.author.last_name }}</h5>
+                </li>
+                <li>
+                    <form action="/books/edit/{{ book.id }}" , method="GET">
+                        <button id="edit-btn">Edit</button>
+                    </form>
+                </li>
+            </div>
+        </ul>
+    </a>
     {% endfor %}
 </div>
 

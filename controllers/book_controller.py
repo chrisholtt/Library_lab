@@ -10,6 +10,12 @@ def books():
     books = book_repository.select_all()
     return render_template("books/index.html", books=books)
 
+# VIEW BOOK
+@books_blueprint.route('/book/<id>')
+def book(id):
+    book = book_repository.select(id)
+    # author = author_repository.select(book.author.id)
+    return render_template('books/book.html', book=book)
 
 
 # new book page
@@ -52,3 +58,9 @@ def update_book(id):
     return redirect('/books')
 
 
+# DELETING A BOOK
+@books_blueprint.route("/book/delete/<id>", methods=["POST"])
+def delete(id):
+    book = book_repository.select(id)
+    book_repository.delete(book)
+    return redirect('/books')

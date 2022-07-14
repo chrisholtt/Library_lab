@@ -52,11 +52,8 @@ def select_all():
         author = author_repository.select(row['author_id'])
         book = Book(author, row['title'], row['pages'], row['id'] )
         books.append(book)
-
     return books
 
-
-# Get this to work
 def update(book):
     sql = """
     UPDATE books SET (title, pages) = (%s, %s)
@@ -66,3 +63,10 @@ def update(book):
     run_sql(sql, values)
 
 
+def delete(book):
+    sql = """
+    DELETE FROM books 
+    WHERE id = %s
+    """
+    values = [book.id]
+    run_sql(sql, values)
